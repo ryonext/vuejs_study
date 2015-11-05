@@ -26,15 +26,15 @@ br
   button v-on:click="showNewUser()"
     | New User
 
-  p v-if="hoge" hogehogehoge
-  = form_for User.new do |f|
-    .field
-      = f.label :name
-      = f.text_field :name
-    .field
-      = f.label :age
-      = f.number_field :age
-    .field
-      = f.label :profile
-      = f.text_area :profile
-    .actions = f.submit
+  div v-if="hoge"
+    = form_for User.new do |f|
+      .field
+        = f.label :name
+        = f.text_field :name
+      .field
+        = f.label :age
+        = f.number_field :age
+      .field
+        = f.label :profile
+        = f.text_area :profile
+      .actions = f.submit
