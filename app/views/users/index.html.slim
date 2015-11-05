@@ -22,11 +22,19 @@ table
 
 br
 
-= link_to 'New User', new_user_path
+#new-user
+  button v-on:click="showNewUser()"
+    | New User
 
-#demo
-  p
-    | {{message}}
-  p
-    input v-model="message"
-
+  p v-if="hoge" hogehogehoge
+  = form_for User.new do |f|
+    .field
+      = f.label :name
+      = f.text_field :name
+    .field
+      = f.label :age
+      = f.number_field :age
+    .field
+      = f.label :profile
+      = f.text_area :profile
+    .actions = f.submit

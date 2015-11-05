@@ -1,8 +1,11 @@
 $ ->
   demo = new Vue(
-    el: "#demo"
+    el: "#new-user"
     data:
-      messge: "hoge"
+      hoge: false
+    methods:
+      showNewUser: ->
+        this.hoge = true
   )
 
   return
