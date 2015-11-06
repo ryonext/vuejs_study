@@ -1,3 +1,19 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/* 常に表示 */
+.expand-transition {
+  transition: all .3s ease;
+  height: 300px;
+  padding: 10px;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+/* .expand-enter は entering に対する開始状態を定義 */
+/* .expand-leave は leaving に対する終了状態を定義 */
+.expand-enter, .expand-leave {
+  height: 0;
+  padding: 0 10px;
+  opacity: 0;
+}

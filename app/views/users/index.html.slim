@@ -26,7 +26,7 @@ br
   button v-on:click="showNewUser()"
     | New User
 
-  div v-if="hoge"
+  div v-if="hoge" transition="expand"
     = form_for User.new do |f|
       .field
         = f.label :name

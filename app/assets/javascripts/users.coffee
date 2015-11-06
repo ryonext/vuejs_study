@@ -5,7 +5,7 @@ $ ->
       hoge: false
     methods:
       showNewUser: ->
-        this.hoge = true
+        this.hoge = !this.hoge
   )
 
   return
