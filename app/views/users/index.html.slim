@@ -32,12 +32,12 @@ h1 Listing users
     = form_for User.new do |f|
       .field
         = f.label :name
-        = f.text_field :name
+        input v-model="newUser.name"
       .field
         = f.label :age
-        = f.number_field :age
+        input v-model="newUser.age"
       .field
         = f.label :profile
-        = f.text_area :profile
+        input v-model="newUser.profile"
     button v-on:click="createUser()"
       | Create User

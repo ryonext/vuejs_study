@@ -3,6 +3,7 @@ $ ->
     el: "#new-user"
     data:
       hoge: false
+      newUser: '',
       users: [
         { name: "hoge", age: 20, profile: "hi" },
         { name: "fuga", age: 18, profile: "fugaga" }
@@ -11,7 +12,7 @@ $ ->
       showNewUser: ->
         this.hoge = !this.hoge
       createUser: ->
-        alert "hoge"
+        this.users.push(this.newUser)
   )
 
   return
