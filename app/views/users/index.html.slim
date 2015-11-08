@@ -1,28 +1,30 @@
 h1 Listing users
 
-table
-  thead
-    tr
-      th Name
-      th Age
-      th Profile
-      th
-      th
-      th
-
-  tbody
-    - @users.each do |user|
-      tr
-        td = user.name
-        td = user.age
-        td = user.profile
-        td = link_to 'Show', user
-        td = link_to 'Edit', edit_user_path(user)
-        td = link_to 'Destroy', user, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
 #new-user
+  table
+    thead
+      tr
+        th Name
+        th Age
+        th Profile
+        th
+        th
+        th
+
+    tbody
+        tr v-for="user in users"
+          td
+            | {{ user.name }}
+          td
+            | {{ user.age }}
+          td
+            | {{ user.profile }}
+          td  'Show'
+          td  'Edit'
+          td  'Destroy'
+
+  br
+
   button v-on:click="showNewUser()"
     | New User
 
@@ -37,4 +39,5 @@ br
       .field
         = f.label :profile
         = f.text_area :profile
-      .actions = f.submit
+    button v-on:click="createUser()"
+      | Create User
