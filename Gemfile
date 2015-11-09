@@ -14,7 +14,7 @@ gem "uglifier", ">= 1.3.0"
 gem "vuejs-rails"
 
 group :development, :test do
-  gem "byebug"
+  gem "pry-byebug"
   gem "rspec-rails"
 end
 

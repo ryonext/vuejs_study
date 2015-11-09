@@ -4,15 +4,15 @@ $ ->
     data:
       hoge: false
       newUser: '',
-      users: [
-        { name: "hoge", age: 20, profile: "hi" },
-        { name: "fuga", age: 18, profile: "fugaga" }
-      ]
+      users: window.objUsers
     methods:
       showNewUser: ->
         this.hoge = !this.hoge
       createUser: ->
-        this.users.push(this.newUser)
+        name = this.newUser.name
+        age = this.newUser.age
+        profile = this.newUser.profile
+        this.users.push({ name: name })
   )
 
   return
