@@ -38,9 +38,9 @@ javascript:
         input v-model="newUser.name"
       .field
         = f.label :age
-        input v-model="newUser.age"
+        input v-model="newUser.age" type="number"
       .field
         = f.label :profile
-        input v-model="newUser.profile"
+        textarea v-model="newUser.profile"
     button v-on:click="createUser()"
       | Create User
