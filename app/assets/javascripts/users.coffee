@@ -5,6 +5,13 @@ $ ->
       hoge: false
       newUser: '',
       users: window.objUsers
+      validation:
+        name: false
+    filters:
+      nameValidator:
+        write: (val) ->
+          this.validation.name = !!val
+          return val
     methods:
       showNewUser: ->
         this.hoge = !this.hoge

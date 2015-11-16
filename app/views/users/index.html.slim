@@ -35,7 +35,7 @@ javascript:
     = form_for User.new do |f|
       .field
         = f.label :name
-        input v-model="newUser.name"
+        input v-model="newUser.name | nameValidator"
       .field
         = f.label :age
         input v-model="newUser.age" type="number"
@@ -44,3 +44,7 @@ javascript:
         textarea v-model="newUser.profile"
     button v-on:click="createUser()"
       | Create User
+
+  ul.errors
+    li v-show="!validation.name"
+       | name can't be blank
