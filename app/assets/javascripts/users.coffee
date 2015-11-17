@@ -5,17 +5,20 @@ $ ->
       hoge: false
       newUser: '',
       users: window.objUsers
-      validation:
-        name: false
-    filters:
-      nameValidator:
-        write: (val) ->
-          this.validation.name = !!val
-          return val
+    computed:
+      validation: ->
+        name: !!this.newUser.name.trim()
+      isValid: ->
+        validation = this.validation
+        Object.keys(validation).every( (key) ->
+          validation[key]
+        )
     methods:
       showNewUser: ->
         this.hoge = !this.hoge
       createUser: ->
+        unless this.isValid
+          return
         this.$http.post('/users', this.newUser, (data, status, request) ->
 
           name = this.newUser.name
@@ -28,7 +31,6 @@ $ ->
           ).error( (data, status, request) ->
             console.log("post failed")
         )
-
   )
 
   return

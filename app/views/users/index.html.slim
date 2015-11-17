@@ -35,7 +35,7 @@ javascript:
     = form_for User.new do |f|
       .field
         = f.label :name
-        input v-model="newUser.name | nameValidator"
+        input v-model="newUser.name"
       .field
         = f.label :age
         input v-model="newUser.age" type="number"
