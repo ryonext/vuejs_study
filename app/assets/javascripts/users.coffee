@@ -3,7 +3,11 @@ $ ->
     el: "#new-user"
     data:
       hoge: false
-      newUser: '',
+      newUser: {
+        name: ""
+        age: ""
+        profile: ""
+      },
       users: window.objUsers
     computed:
       validation: ->
