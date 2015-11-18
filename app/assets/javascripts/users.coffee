@@ -12,6 +12,7 @@ $ ->
     computed:
       validation: ->
         name: !!this.newUser.name.trim()
+        age: !!this.newUser.age.trim()
       isValid: ->
         validation = this.validation
         Object.keys(validation).every( (key) ->
