@@ -2,7 +2,7 @@ $ ->
   new Vue(
     el: "#new-user"
     data:
-      hoge: false
+      userForm: false
       newUser: {
         name: ""
         age: ""
@@ -20,7 +20,7 @@ $ ->
         )
     methods:
       showNewUser: ->
-        this.hoge = !this.hoge
+        this.userForm = !this.userForm
       createUser: ->
         unless this.isValid
           return

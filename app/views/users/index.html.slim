@@ -31,7 +31,7 @@ javascript:
   button v-on:click="showNewUser()"
     | New User
 
-  div v-if="hoge" transition="expand"
+  div v-if="userForm" transition="expand"
     = form_for User.new do |f|
       .field
         = f.label :name
