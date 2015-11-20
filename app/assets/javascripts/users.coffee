@@ -37,6 +37,9 @@ $ ->
           ).error( (data, status, request) ->
             console.log("post failed")
         )
+      editName: (user) ->
+        alert user.name
+
   )
 
   return

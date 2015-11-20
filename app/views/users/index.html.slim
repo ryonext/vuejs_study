@@ -16,7 +16,8 @@ javascript:
     tbody
         tr v-for="user in users"
           td
-            | {{ user.name }}
+            div v-on:click="editName(user)"
+              | {{ user.name }}
           td
             | {{ user.age }}
           td
