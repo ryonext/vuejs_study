@@ -2,6 +2,10 @@ h1 Listing users
 
 javascript:
   var objUsers = #{raw @users.to_json};
+  objUsers = objUsers.map(function(element, i, arr) {
+    element.editable = false
+    return element
+  });
 
 #new-user
   table
