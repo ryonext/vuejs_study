@@ -30,7 +30,7 @@ $ ->
           name = this.newUser.name
           age = this.newUser.age
           profile = this.newUser.profile
-          this.users.push({ name: name, age: age, profile: profile })
+          this.users.push({ name: name, age: age, profile: profile, editable: false })
 
           this.newUser = {}
 
@@ -38,8 +38,7 @@ $ ->
             console.log("post failed")
         )
       editName: (user) ->
-        alert user.name
-
+        user.editable = !user.editable
   )
 
   return
