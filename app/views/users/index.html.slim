@@ -20,10 +20,11 @@ javascript:
     tbody
         tr v-for="user in users"
           td
-            div v-on:click="editName(user)"
-              | {{ user.name }} {{ user.editable }}
             div v-if="user.editable"
-              | editable!
+              input v-model="user.name"
+            div(v-else)
+              div v-on:click="editName(user)"
+                | {{ user.name }}
           td
             | {{ user.age }}
           td
