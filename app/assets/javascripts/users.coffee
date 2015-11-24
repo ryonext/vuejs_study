@@ -40,7 +40,12 @@ $ ->
       editName: (user) ->
         user.editable = true
       updateName: (user) ->
-        user.editable = false
+        this.$http.put("/users/#{user.id}", user, (data, status, request) ->
+          user.editable = false
+
+          ).error( (data, status, request) ->
+            console.log("post failed")
+        )
   )
 
   return
