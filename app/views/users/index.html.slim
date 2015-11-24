@@ -21,7 +21,7 @@ javascript:
         tr v-for="user in users"
           td
             div v-if="user.editable"
-              input v-model="user.name"
+              input v-model="user.name" v-on:keyup.enter="updateName(user)"
             div(v-else)
               div v-on:click="editName(user)"
                 | {{ user.name }}

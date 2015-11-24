@@ -38,7 +38,9 @@ $ ->
             console.log("post failed")
         )
       editName: (user) ->
-        user.editable = !user.editable
+        user.editable = true
+      updateName: (user) ->
+        user.editable = false
   )
 
   return
