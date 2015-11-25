@@ -29,8 +29,9 @@ javascript:
             | {{ user.age }}
           td
             | {{ user.profile }}
-          td  'Edit'
-          td  'Destroy'
+          td
+            button v-on:click="delete(user, $index)"
+              | delete
 
   br
 

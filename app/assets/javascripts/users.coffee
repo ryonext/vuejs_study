@@ -48,6 +48,13 @@ $ ->
           ).error( (data, status, request) ->
             console.log("post failed")
         )
+      delete: (user, index) ->
+        this.$http.delete("/users/#{user.id}", null, (data, status, request) ->
+          this.users.splice(index, 1)
+          ).error( (data, status, request) ->
+            console.log("post failed")
+        )
+
   )
 
   return
