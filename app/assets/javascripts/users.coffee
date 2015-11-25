@@ -40,6 +40,8 @@ $ ->
       editName: (user) ->
         user.editable = true
       updateName: (user) ->
+        unless (!!user.name.trim())
+          return
         this.$http.put("/users/#{user.id}", user, (data, status, request) ->
           user.editable = false
 
