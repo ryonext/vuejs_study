@@ -8,13 +8,13 @@ gem "jquery-rails"
 gem "sass-rails", "~> 5.0"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "slim-rails"
-gem "sqlite3"
 gem "uglifier", ">= 1.3.0"
 gem "vuejs-rails"
 
 group :development, :test do
   gem "pry-byebug"
   gem "rspec-rails"
+  gem "sqlite3"
 end
 
 group :development do
@@ -22,3 +22,6 @@ group :development do
   gem "spring"
 end
 
+group :production do
+  gem "pg"
+end
