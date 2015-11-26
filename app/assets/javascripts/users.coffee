@@ -54,6 +54,14 @@ $ ->
           ).error( (data, status, request) ->
             console.log("post failed")
         )
+      up: (index) ->
+        return if index == 0
+
+        this.users.splice(index - 1, 2, this.users[index], this.users[index - 1]);
+      down: (index) ->
+        return if index == this.users.length - 1
+
+        this.users.splice(index, 2, this.users[index + 1], this.users[index]);
 
   )
 

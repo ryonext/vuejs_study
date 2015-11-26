@@ -16,6 +16,7 @@ javascript:
         th Profile
         th
         th
+        th
 
     tbody
         tr v-for="user in users"
@@ -29,6 +30,12 @@ javascript:
             | {{ user.age }}
           td
             | {{ user.profile }}
+          td
+            button v-on:click="up($index)"
+              | ↑
+          td
+            button v-on:click="down($index)"
+              | ↓
           td
             button v-on:click="delete(user, $index)"
               | delete
