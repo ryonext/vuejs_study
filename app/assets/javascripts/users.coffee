@@ -1,4 +1,9 @@
 $ ->
+  userComponent = Vue.extend(
+    props: ['user']
+    template: '<p> {{ user.age }} </p>'
+  )
+
   new Vue(
     el: "#new-user"
     data:
@@ -19,6 +24,8 @@ $ ->
         Object.keys(validation).every( (key) ->
           validation[key]
         )
+    components:
+      'user-component': userComponent
     methods:
       showNewUser: ->
         this.userForm = !this.userForm

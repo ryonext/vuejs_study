@@ -40,6 +40,8 @@ javascript:
             button v-on:click="delete(user, $index)"
               | delete
 
+  user-component v-for="user in users"
+
   br
 
   button v-on:click="showNewUser()"
