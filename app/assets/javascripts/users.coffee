@@ -1,7 +1,11 @@
 $ ->
   userComponent = Vue.extend(
+    data: ->
+      return {
+        user: 0
+      }
     props: ['user']
-    template: '<p> {{ user.age }} </p>'
+    template: '<p> {{ user.name }} </p>'
   )
 
   new Vue(
