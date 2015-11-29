@@ -5,7 +5,35 @@ $ ->
         user: 0
       }
     props: ['user']
-    template: '<p> {{ user.name }} </p>'
+    template: '
+    <tr>
+      <td>
+        <div v-if="user.editable">
+          <input v-model="user.name" v-on:keyup.enter="updateName(user)" />
+        </div>
+        <div v-else="">
+          <div v-on:click="editName(user)">
+            {{ user.name }}
+          </div>
+        </div>
+      </td>
+      <td>
+        {{ user.age }}
+      </td>
+      <td>
+          {{ user.profile }}
+      </td>
+      <td>
+        <button v-on:click="up($index)">↑</button>
+      </td>
+      <td>
+        <button v-on:click="down($index)">↓</button>
+      </td>
+      <td>
+        <button v-on:click="delete(user, $index)">delete</button>
+      </td>
+    </tr>
+    '
   )
 
   new Vue(
